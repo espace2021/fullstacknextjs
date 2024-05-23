@@ -1,6 +1,6 @@
 const LIVRE_API="/livres/"
 
-export const fetchLivres=async()=> { 
+export const fetchLivres=async()=> { console.log(process.env.NEXT_PUBLIC_API_URL+LIVRE_API)
 const res = await fetch(process.env.NEXT_PUBLIC_API_URL+LIVRE_API, { cache: 'no-store' })
 
 const response = await res.json();
