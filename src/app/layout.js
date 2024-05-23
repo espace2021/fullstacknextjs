@@ -25,6 +25,8 @@ export default async function RootLayout({ children }) {
       <body className={inter.className}>
       <CartsProvider>
       <AuthProvider>
+    hhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    {process.env.NEXT_PUBLIC_DATABASE_URL}
       <Menu/>
         {children}
         </AuthProvider>
