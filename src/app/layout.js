@@ -25,6 +25,7 @@ export default async function RootLayout({ children }) {
       <body className={inter.className}>
       <CartsProvider>
       <AuthProvider>
+  
       <Menu/>
         {children}
         </AuthProvider>
