@@ -25,9 +25,9 @@ export default async function RootLayout({ children }) {
       <body className={inter.className}>
       <CartsProvider>
       <AuthProvider>
-  {process.env.NEXT_PUBLIC_API_URL}
+  {process.env.NEXT_PUBLIC_GOOGLE_CLIENTID}
   
-  {process.env.NEXT_PUBLIC_URL}
+  {process.env.NEXT_PUBLIC_GOOGLE_CLIENTSECRET}
       <Menu/>
         {children}
         </AuthProvider>
