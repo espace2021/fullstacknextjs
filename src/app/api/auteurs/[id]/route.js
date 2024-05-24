@@ -17,7 +17,8 @@ export async function GET(_, { params }) {
 }
 
 export async function PUT(req, { params }) {
-    try { await connectDB();
+    try { 
+        //await connectDB();
             const body= await req.json();
             const auteur = await Auteur.findByIdAndUpdate(
                 params.id,
