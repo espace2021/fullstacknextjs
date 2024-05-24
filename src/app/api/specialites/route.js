@@ -1,7 +1,7 @@
 import connectDB from '@/lib/connectDB';
 import Specialite from '@/models/Specialite';
 import {  NextResponse } from 'next/server';
-  
+import connectDB from '@/lib/connectDB'; 
 export async function GET() {
     try {
         await connectDB();

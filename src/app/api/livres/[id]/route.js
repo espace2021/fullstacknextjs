@@ -1,10 +1,10 @@
 import { HttpStatusCode } from 'axios';
 import Livre from '@/models/Livre';
 import {  NextResponse } from 'next/server';
-
+import connectDB from '@/lib/connectDB';
 export async function GET(_, { params }) {
     try {
-     
+        await connectDB();
         const livre = await Livre.findById(params.id).populate('auteurs').populate('specialite').populate('maised')
         if (livre) {
             return NextResponse.json(livre);
@@ -17,7 +17,7 @@ export async function GET(_, { params }) {
 
 export async function PUT(req, { params }) {
     try {
-       
+        await connectDB();
         const body= await req.json();
         const livre = await Livre.findByIdAndUpdate(
             params.id,

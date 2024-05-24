@@ -2,10 +2,10 @@ import { HttpStatusCode } from 'axios';
 
 import Auteur from '@/models/Auteur';
 import {  NextResponse } from 'next/server';
-
+import connectDB from '@/lib/connectDB';
 export async function GET(_, { params }) {
     try {
-       
+        await connectDB();
         const auteur = await Auteur.findById(params.id);
         if (auteur) {
             return NextResponse.json(auteur);
@@ -17,7 +17,7 @@ export async function GET(_, { params }) {
 }
 
 export async function PUT(req, { params }) {
-    try {
+    try { await connectDB();
             const body= await req.json();
             const auteur = await Auteur.findByIdAndUpdate(
                 params.id,

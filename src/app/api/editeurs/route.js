@@ -1,10 +1,10 @@
 import Editeur from '@/models/Editeur';
 import {  NextResponse } from 'next/server';
 import { HttpStatusCode } from 'axios';
-  
+import connectDB from '@/lib/connectDB';
 export async function GET() {
     try {
-        
+        await connectDB();
         const editeurs = await Editeur.find({}, null, {sort: {'_id': -1}});
         return NextResponse.json(editeurs );
     } catch (error) {
@@ -14,7 +14,7 @@ export async function GET() {
 
 export async function POST(req) {
     try {
-        
+        await connectDB();
         const body = await req.json();
         const newEditeur = new Editeur(body)
         const editeur = await newEditeur.save();

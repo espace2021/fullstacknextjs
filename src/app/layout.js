@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import Menu from '@/components/client/menu';
 
-import connectDB from '@/lib/connectDB';
+
 
 import AuthProvider from '@/providers/authProvider';
 
@@ -19,7 +19,7 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  await connectDB();
+  
   return (
     <html lang="en">
       <body className={inter.className}>
