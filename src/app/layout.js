@@ -5,8 +5,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import Menu from '@/components/client/menu';
 
-
-
 import AuthProvider from '@/providers/authProvider';
 
 import CartsProvider from '@/providers/cartsProvider';
@@ -19,13 +17,13 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  
+ 
   return (
     <html lang="en">
       <body className={inter.className}>
       <CartsProvider>
       <AuthProvider>
-        <Menu/>
+      <Menu/>
         {children}
         </AuthProvider>
         </CartsProvider>

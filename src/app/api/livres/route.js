@@ -4,7 +4,7 @@ import {  NextResponse } from 'next/server';
 import connectDB from '@/lib/connectDB';
 export async function POST(req) {
     try {
-        await connectDB();
+       
         const body = await req.json();
        
         const newLivre = new Livre(body)
